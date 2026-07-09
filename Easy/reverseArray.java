@@ -30,9 +30,10 @@ public class reverseArray {
         
         int left = 0, right = n - 1;
         while(left < right){
-            int temp = arr[left];
+            int temp=arr[left];
             arr[left] = arr[right];
-            arr[right] = temp;
+            arr[right]=temp;
+            
             left++;
             right--;
         }
