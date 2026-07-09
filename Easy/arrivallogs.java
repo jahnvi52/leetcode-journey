@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class arrayreversal {
+public class arrivallogs {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int p = sc.nextInt();
