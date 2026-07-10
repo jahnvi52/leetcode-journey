@@ -48,5 +48,7 @@ public class arrivallogs {
         }
         
         System.out.println(sb.toString());
+        sc.close();
+        
     }
 }
