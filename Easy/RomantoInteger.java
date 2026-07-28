@@ -1,0 +1,73 @@
+import java.util.Scanner;
+
+public class RomantoInteger {
+
+    public static int value(char ch) {
+
+        switch (ch) {
+
+            case 'I':
+                return 1;
+
+            case 'V':
+                return 5;
+
+            case 'X':
+                return 10;
+
+            case 'L':
+                return 50;
+
+            case 'C':
+                return 100;
+
+            case 'D':
+                return 500;
+
+            case 'M':
+                return 1000;
+        }
+
+        return 0;
+    }
+
+    public static int romanToInt(String s) {
+
+        int ans = 0;
+
+        for (int i = 0; i < s.length(); i++) {
+
+            int current = value(s.charAt(i));
+
+            if (i < s.length() - 1) {
+
+                int next = value(s.charAt(i + 1));
+
+                if (current < next) {
+                    ans = ans - current;
+                } else {
+                    ans = ans + current;
+                }
+
+            } else {
+                ans = ans + current;
+            }
+        }
+
+        return ans;
+    }
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter Roman Numeral: ");
+        String s = sc.nextLine();
+
+        int result = romanToInt(s);
+
+        System.out.println("Integer = " + result);
+
+        sc.close();
+    }
+}
